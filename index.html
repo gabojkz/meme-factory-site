@@ -152,6 +152,33 @@
         </div>
       </div>
 
+      <!-- THE REAL APP -->
+      <section class="section real" aria-labelledby="real-title">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="eyebrow">The real thing</p>
+            <h2 id="real-title">No mockups. This is the actual app.</h2>
+            <p class="real-lede">
+              Search at the top, stats in the corner, every meme with the time you saved it. Here it is with 69
+              memes in it. Rookie numbers, honestly.
+            </p>
+          </header>
+          <figure class="shot">
+            <img
+              src="assets/app-screenshot.jpg"
+              width="1091"
+              height="695"
+              loading="lazy"
+              alt="The MemeFactory app: a search box, folder size and meme counts, a box for pasting meme links, sort and date filters, tags, and a grid of memes each showing when it was added."
+            />
+            <span class="note n1" aria-hidden="true">searches the words <em>inside</em> memes</span>
+            <span class="note n2" aria-hidden="true">folder size + counts. click one to filter</span>
+            <span class="note n3" aria-hidden="true">paste any link, get the meme</span>
+            <span class="note n4" aria-hidden="true">drag any card into a chat</span>
+          </figure>
+        </div>
+      </section>
+
       <!-- FEATURES -->
       <section class="section" id="features">
         <div class="wrap">
@@ -393,17 +420,29 @@
             </article>
           </div>
 
-          <div class="mac-help">
-            <img src="assets/memes/blob-facepalm.png" alt="" />
-            <div>
-              <h3>Mac says “MemeFactory can’t be opened” 💀</h3>
-              <p>
-                Apple hasn’t notarized us yet (we’re still doing the paperwork). Right-click MemeFactory in
-                Applications → <b>Open</b> → <b>Open</b>. Or paste this into Terminal once and feel like a hacker:
-              </p>
-              <div class="cmd">
-                <code>xattr -cr /Applications/MemeFactory.app</code>
-                <button type="button" class="btn btn-small" data-copy="xattr -cr /Applications/MemeFactory.app">Copy</button>
+          <div class="os-help">
+            <div class="mac-help">
+              <img src="assets/memes/blob-facepalm.png" alt="" />
+              <div>
+                <h3>Mac says “MemeFactory can’t be opened” 💀</h3>
+                <p>
+                  Apple hasn’t notarized us yet (we’re still doing the paperwork). Right-click MemeFactory in
+                  Applications → <b>Open</b> → <b>Open</b>. Or paste this into Terminal once and feel like a hacker:
+                </p>
+                <div class="cmd">
+                  <code>xattr -cr /Applications/MemeFactory.app</code>
+                  <button type="button" class="btn btn-small" data-copy="xattr -cr /Applications/MemeFactory.app">Copy</button>
+                </div>
+              </div>
+            </div>
+            <div class="mac-help win-help">
+              <img src="assets/memes/face-shocked.png" alt="" />
+              <div>
+                <h3>Windows says “Windows protected your PC” 🙄</h3>
+                <p>
+                  The installer isn’t code-signed yet (certificates cost money and this app costs nothing). Click
+                  <b>More info</b> → <b>Run anyway</b>. That’s it, no hacking required.
+                </p>
               </div>
             </div>
           </div>

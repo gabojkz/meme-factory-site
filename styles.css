@@ -876,6 +876,79 @@ mark {
   margin: 0;
 }
 
+/* The real app screenshot */
+
+.real {
+  padding-bottom: 72px;
+}
+
+.real-lede {
+  font-size: 1.2rem;
+  max-width: 38em;
+}
+
+.shot {
+  position: relative;
+  margin: 18px auto 0;
+  max-width: 1000px;
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+  border: var(--line) solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 12px 12px 0 var(--accent), 12px 12px 0 3px var(--ink);
+}
+
+.note {
+  position: absolute;
+  z-index: 2;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--panel);
+  padding: 4px 12px;
+  font: 700 0.95rem var(--font-display);
+  box-shadow: 3px 3px 0 var(--ink);
+  white-space: nowrap;
+}
+
+.note::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: inherit;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+/* Each note sits just outside the screenshot, its tail pointing at the part it describes. */
+.n1 { left: 26%; top: -30px; rotate: -2deg; background: var(--cyan); }
+.n1::after { left: 40px; bottom: -8px; rotate: 45deg; }
+.n2 { right: 12px; top: -44px; rotate: 2deg; }
+.n2::after { right: 60px; bottom: -8px; rotate: 45deg; }
+.n3 { left: -26px; top: 31%; rotate: -4deg; background: #ffd2cc; }
+.n3::after { right: -8px; top: 8px; rotate: -45deg; }
+.n4 { right: 8%; bottom: -26px; rotate: 2deg; background: #c9f2d4; }
+.n4::after { left: 30px; top: -8px; rotate: -135deg; }
+
+.os-help {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.os-help .mac-help {
+  margin-top: 0;
+  align-items: start;
+}
+
+.mac-help.win-help {
+  box-shadow: 5px 5px 0 var(--panel), 5px 5px 0 3px var(--ink);
+}
+
 /* Salt Bae, sprinkling features over the features heading */
 
 #features .section-head {
@@ -1474,6 +1547,18 @@ mark {
 }
 
 @media (max-width: 860px) {
+  .os-help {
+    grid-template-columns: 1fr;
+  }
+
+  .note {
+    display: none;
+  }
+
+  .shot img {
+    box-shadow: 7px 7px 0 var(--accent), 7px 7px 0 3px var(--ink);
+  }
+
   #features .section-head,
   .faq .section-head {
     padding-right: 0;
