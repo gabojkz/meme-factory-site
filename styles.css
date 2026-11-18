@@ -876,6 +876,118 @@ mark {
   margin: 0;
 }
 
+/* Under the hood — dark panel for the OCR machine illustration */
+
+.machine {
+  position: relative;
+  padding: 104px 0 112px;
+  background:
+    radial-gradient(rgba(46, 196, 255, 0.16) 1.2px, transparent 1.4px) 0 0 / 11px 11px,
+    radial-gradient(circle at 85% 10%, rgba(255, 59, 59, 0.22), transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(46, 196, 255, 0.2), transparent 40%),
+    #1c1d22;
+  color: var(--paper);
+  border-bottom: var(--line) solid var(--ink);
+  overflow: hidden;
+}
+
+.machine h2 {
+  color: var(--paper);
+  text-shadow: 3px 3px 0 var(--accent);
+}
+
+.machine .eyebrow {
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--cyan);
+}
+
+.machine-lede {
+  font-size: 1.2rem;
+  max-width: 38em;
+  opacity: 0.92;
+}
+
+.machine-art {
+  margin: 0;
+  border: 4px solid var(--paper);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 10px 10px 0 var(--cyan), 10px 10px 0 4px var(--paper);
+  rotate: -0.6deg;
+  background: #1a1b20;
+}
+
+.machine-art img {
+  width: 100%;
+  height: auto;
+}
+
+.machine-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 44px 0 0;
+}
+
+.machine-facts li {
+  border: var(--line) solid var(--paper);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-weight: 700;
+  background: rgba(255, 247, 232, 0.04);
+}
+
+.machine-facts b {
+  display: block;
+  font: 700 1.3rem var(--font-display);
+  color: var(--panel);
+}
+
+.machine-facts li:nth-child(2) b { color: var(--cyan); }
+.machine-facts li:nth-child(3) b { color: #ff8a5c; }
+
+/* Doge, in the download header */
+
+.download .section-head {
+  position: relative;
+  max-width: none;
+  padding-right: 360px;
+}
+
+.doge {
+  position: absolute;
+  right: 40px;
+  top: -30px;
+  width: 300px;
+  height: 260px;
+  pointer-events: none;
+}
+
+.doge img {
+  position: absolute;
+  right: 50px;
+  bottom: 0;
+  width: 190px;
+  height: auto;
+  filter: drop-shadow(4px 4px 0 var(--ink));
+  animation: bob 5s ease-in-out infinite;
+}
+
+.doge span {
+  position: absolute;
+  font: 700 1.15rem "Comic Neue", "Comic Sans MS", cursive;
+  white-space: nowrap;
+  text-shadow: 1px 1px 0 rgba(18, 18, 18, 0.25);
+}
+
+.doge .w1 { left: -24px; top: 14px; color: #e0218a; rotate: -8deg; }
+.doge .w2 { right: 40px; top: -14px; color: var(--accent); rotate: 6deg; font-size: 1.3rem; }
+.doge .w3 { left: -10px; top: 92px; color: #1f9be0; font-size: 1.7rem; rotate: -6deg; }
+.doge .w4 { right: -4px; bottom: -22px; color: #2aa84f; rotate: -5deg; }
+.doge .w5 { left: -20px; bottom: 26px; color: #8a3ffc; rotate: 5deg; }
+
 /* Download */
 
 .download {
@@ -1147,6 +1259,7 @@ mark {
 
 .final-inner {
   position: relative;
+  overflow: visible;
   text-align: center;
   border: var(--line) solid var(--ink);
   border-radius: 14px;
@@ -1164,6 +1277,20 @@ mark {
 .final-inner h2 code {
   background: var(--white);
   border: 2px solid var(--ink);
+}
+
+.final-toast {
+  position: absolute;
+  left: 3%;
+  bottom: -3px;
+  width: 170px;
+  height: auto;
+  filter: drop-shadow(4px 4px 0 var(--ink));
+}
+
+.toast-line {
+  font: 700 1.15rem var(--font-display);
+  margin: -12px 0 26px;
 }
 
 .final-sticker {
@@ -1208,7 +1335,46 @@ mark {
 
 /* ---------- Responsive ---------- */
 
+@media (max-width: 1080px) {
+  .download .section-head {
+    padding-right: 250px;
+  }
+
+  .doge {
+    right: 0;
+    transform: scale(0.8);
+    transform-origin: top right;
+  }
+
+  .final-toast {
+    width: 130px;
+  }
+}
+
 @media (max-width: 860px) {
+  .machine-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .download .section-head {
+    padding-right: 0;
+    padding-top: 200px;
+  }
+
+  .doge {
+    left: 50%;
+    right: auto;
+    top: -40px;
+    transform: translateX(-50%) scale(0.75);
+    transform-origin: top center;
+  }
+
+  .final-toast {
+    position: static;
+    margin: 0 auto 10px;
+    width: 120px;
+  }
+
   .downloads {
     grid-template-columns: 1fr;
     max-width: 520px;

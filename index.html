@@ -292,6 +292,36 @@
         </div>
       </section>
 
+      <!-- UNDER THE HOOD -->
+      <section class="machine" aria-labelledby="machine-title">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="eyebrow">Under the hood</p>
+            <h2 id="machine-title">How the sausage gets made</h2>
+            <p class="machine-lede">
+              Memes go into the scanner, words come out, and everything lands in a tiny database on
+              <em>your</em> disk. The cloud was not invited.
+            </p>
+          </header>
+          <figure class="machine-art">
+            <img
+              src="assets/ocr-machine.jpg"
+              srcset="assets/ocr-machine-900.jpg 900w, assets/ocr-machine.jpg 1600w"
+              sizes="(max-width: 1180px) 100vw, 1180px"
+              width="1600"
+              height="873"
+              loading="lazy"
+              alt="Memes in PNG, JPG and BMP files go through a scanner that detects their text, which is saved with tags in a local SQLite database. Local only, no cloud."
+            />
+          </figure>
+          <ul class="machine-facts">
+            <li><b>Reads</b> PNG, JPG, GIF, WebP, BMP and video frames</li>
+            <li><b>Indexes</b> into SQLite full-text search, on your disk</li>
+            <li><b>Uploads</b> 0 bytes. Zero. Zilch. Nada.</li>
+          </ul>
+        </div>
+      </section>
+
       <!-- DOWNLOAD -->
       <section class="section download" id="download">
         <div class="halftone" aria-hidden="true"></div>
@@ -299,6 +329,14 @@
           <header class="section-head">
             <p class="eyebrow">Download</p>
             <h2>Acquire the factory</h2>
+            <div class="doge" aria-hidden="true">
+              <img src="assets/memes/doge.png" alt="" width="228" height="265" />
+              <span class="w1">much download</span>
+              <span class="w2">very free</span>
+              <span class="w3">wow</span>
+              <span class="w4">such local</span>
+              <span class="w5">no cloud</span>
+            </div>
             <p class="release-line" data-release-line>
               Always the latest version, fresh from
               <a href="https://github.com/gabojkz/meme-factory/releases/latest" rel="noopener">GitHub</a>. No email,
@@ -421,7 +459,9 @@
       <section class="final">
         <div class="wrap final-inner">
           <img src="assets/memes/sticker-burst-wow.png" alt="" class="final-sticker" />
+          <img src="assets/memes/pepe-toast.png" alt="" class="final-toast" width="251" height="440" />
           <h2>Your memes deserve better than <code>Downloads/</code></h2>
+          <p class="toast-line">Here’s to never losing a meme again. 🥂</p>
           <a class="btn btn-primary" href="#download">Get MemeFactory (it’s free)</a>
         </div>
       </section>
