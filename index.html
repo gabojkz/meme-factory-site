@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MemeFactory — your local meme vault</title>
+    <meta
+      name="description"
+      content="MemeFactory turns your meme folder into a searchable library. It reads the text inside every meme, saves GIFs and videos from any link, and keeps everything on your computer. Free for Windows, macOS and Linux."
+    />
+    <meta name="theme-color" content="#ffe566" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MemeFactory — your local meme vault" />
+    <meta
+      property="og:description"
+      content="Search memes by the words inside them. GIFs, videos, a meme studio — free, open source, fully local."
+    />
+    <meta property="og:image" content="https://gabojkz.github.io/meme-factory-site/assets/social.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <a class="logo" href="#top" aria-label="MemeFactory home">
+          <img src="assets/icon.png" alt="" width="40" height="40" />
+          <span>MemeFactory</span>
+        </a>
+        <nav aria-label="Main">
+          <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li>
+              <a href="https://github.com/gabojkz/meme-factory" rel="noopener">GitHub</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="btn btn-small nav-cta" href="#download">Download</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top">
+        <div class="halftone" aria-hidden="true"></div>
+        <div class="wrap hero-inner">
+          <div class="hero-copy">
+            <p class="kicker">
+              <span class="badge" data-version-badge>Free &amp; open source</span>
+              Windows · macOS · Linux
+            </p>
+            <h1>
+              Find the <span class="hl">perfect meme</span> before the chat moves on.
+            </h1>
+            <p class="lede">
+              MemeFactory turns your messy meme folder into a library you can search by the words
+              <em>inside</em> the memes. GIFs stay animated, videos stay videos, and nothing ever leaves
+              your computer.
+            </p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#download" data-primary-download>
+                <span class="btn-icon" data-primary-icon aria-hidden="true">⬇</span>
+                <span>
+                  <strong data-primary-label>Download MemeFactory</strong>
+                  <small data-primary-meta>Free · for Windows, macOS and Linux</small>
+                </span>
+              </a>
+              <a class="btn btn-ghost" href="#download">All downloads</a>
+            </div>
+            <p class="cta-note" data-primary-note hidden></p>
+
+            <ul class="proof">
+              <li><b>0</b> accounts</li>
+              <li><b>0</b> uploads</li>
+              <li><b>100%</b> on your machine</li>
+            </ul>
+          </div>
+
+          <!-- A working miniature of the app: the search types itself and filters the grid. -->
+          <div class="hero-art">
+            <img class="sticker s-pow" src="assets/memes/sticker-burst-pow.png" alt="" aria-hidden="true" />
+            <img class="sticker s-lol" src="assets/memes/sticker-label-lol.png" alt="" aria-hidden="true" />
+            <img class="sticker s-blob" src="assets/memes/blob-wave.png" alt="" aria-hidden="true" />
+
+            <div class="window" role="img" aria-label="The MemeFactory app: searching for memes by the text inside them">
+              <div class="window-bar">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span class="window-title">MemeFactory</span>
+              </div>
+              <div class="window-body">
+                <div class="app-top">
+                  <div class="app-brand">MemeFactory</div>
+                  <div class="app-search">
+                    <span aria-hidden="true">🔍</span>
+                    <span class="typed" data-typed>deploy</span><span class="caret" aria-hidden="true"></span>
+                  </div>
+                </div>
+                <div class="app-stats" aria-hidden="true">
+                  <span>📁 412 MB</span><span class="on">Total 1,284</span><span>GIFs 311</span><span>Videos 96</span>
+                </div>
+                <div class="app-grid" data-grid aria-hidden="true">
+                  <figure data-text="deploying on friday"><img src="assets/memes/blob-facepalm.png" alt="" /><figcaption>deploying on friday</figcaption></figure>
+                  <figure data-text="wait it works??"><img src="assets/memes/anime-shocked.png" alt="" /><figcaption>wait it works??</figcaption></figure>
+                  <figure data-text="monday again"><img src="assets/memes/frog-sad.png" alt="" /><figcaption>monday again</figcaption></figure>
+                  <figure data-text="told you so"><img src="assets/memes/face-smug.png" alt="" /><figcaption>told you so</figcaption></figure>
+                  <figure data-text="build passed first try"><img src="assets/memes/cat-happy.png" alt="" /><figcaption>build passed first try</figcaption><span class="gif">GIF</span></figure>
+                  <figure data-text="me after the deploy works"><img src="assets/memes/face-cool.png" alt="" /><figcaption>me after the deploy works</figcaption></figure>
+                  <figure data-text="when the pizza arrives"><img src="assets/memes/object-pizza.png" alt="" /><figcaption>when the pizza arrives</figcaption><span class="gif">▶</span></figure>
+                  <figure data-text="monday standup be like"><img src="assets/memes/folk-gloomy.png" alt="" /><figcaption>monday standup be like</figcaption></figure>
+                  <figure data-text="who's a good meme"><img src="assets/memes/dog-happy.png" alt="" /><figcaption>who's a good meme</figcaption></figure>
+                </div>
+              </div>
+            </div>
+            <div class="bubble" aria-hidden="true">It reads the text<br />in every meme!</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TICKER -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>OCR SEARCH</span><img src="assets/memes/sticker-symbol-sparkle.png" alt="" />
+          <span>GIFS STAY ANIMATED</span><img src="assets/memes/face-laughing.png" alt="" />
+          <span>VIDEO MEMES</span><img src="assets/memes/frog-happy.png" alt="" />
+          <span>MEME STUDIO</span><img src="assets/memes/sticker-symbol-sparkle.png" alt="" />
+          <span>NO CLOUD</span><img src="assets/memes/face-cool.png" alt="" />
+          <span>NO ACCOUNT</span><img src="assets/memes/cat-happy.png" alt="" />
+          <span>NO TRACKING</span><img src="assets/memes/face-love.png" alt="" />
+          <span>OCR SEARCH</span><img src="assets/memes/sticker-symbol-sparkle.png" alt="" />
+          <span>GIFS STAY ANIMATED</span><img src="assets/memes/face-laughing.png" alt="" />
+          <span>VIDEO MEMES</span><img src="assets/memes/frog-happy.png" alt="" />
+          <span>MEME STUDIO</span><img src="assets/memes/sticker-symbol-sparkle.png" alt="" />
+          <span>NO CLOUD</span><img src="assets/memes/face-cool.png" alt="" />
+          <span>NO ACCOUNT</span><img src="assets/memes/cat-happy.png" alt="" />
+          <span>NO TRACKING</span><img src="assets/memes/face-love.png" alt="" />
+        </div>
+      </div>
+
+      <!-- FEATURES -->
+      <section class="section" id="features">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="eyebrow">Features</p>
+            <h2>Everything your meme folder wishes it could do</h2>
+          </header>
+
+          <div class="panels">
+            <article class="panel p-wide p-yellow">
+              <span class="caption">Panel 1 — Search</span>
+              <div class="panel-body">
+                <div>
+                  <h3>Search by what the meme <em>says</em></h3>
+                  <p>
+                    MemeFactory reads the text in every image, GIF and video when you add it. Type “monday” and
+                    every Monday meme shows up, even if the file is called <code>IMG_4031.png</code>.
+                  </p>
+                  <div class="search-demo" aria-hidden="true">
+                    <span class="q">🔍 monday</span>
+                    <span class="hit">“<mark>monday</mark> again”</span>
+                    <span class="hit">“<mark>monday</mark> standup be like”</span>
+                  </div>
+                </div>
+                <img src="assets/memes/face-thinking.png" alt="" class="panel-sticker" />
+              </div>
+            </article>
+
+            <article class="panel p-cyan">
+              <span class="caption">Panel 2 — Links</span>
+              <h3>Paste a link, get the meme</h3>
+              <p>
+                Paste a post from X, Instagram, TikTok or YouTube and the real video is saved, not a blurry
+                screenshot. X “GIFs” become real GIFs.
+              </p>
+              <ul class="chips" aria-label="Supported sites">
+                <li>X</li><li>Instagram</li><li>TikTok</li><li>YouTube</li><li>any image link</li>
+              </ul>
+            </article>
+
+            <article class="panel">
+              <span class="caption">Panel 3 — Share</span>
+              <h3>Drag it into the chat</h3>
+              <p>
+                Drag any meme straight into Discord, WhatsApp Web, Slack or a post, or hit Copy and paste.
+                GIFs arrive animated.
+              </p>
+              <img src="assets/memes/blob-cheer.png" alt="" class="panel-sticker corner" />
+            </article>
+
+            <article class="panel p-red">
+              <span class="caption">Panel 4 — GIFs &amp; videos</span>
+              <h3>Moving pictures welcome</h3>
+              <p>
+                GIFs, animated WebPs and short videos (MP4, MOV, WebM) live next to your images. They play on
+                hover, and their captions are searchable too.
+              </p>
+            </article>
+
+            
+
+            <article class="panel">
+              <span class="caption">Panel 5 — Organise</span>
+              <h3>Tags, sorting and dates</h3>
+              <p>
+                Tag memes, filter to just GIFs or just videos, sort by newest or by name, or find everything you
+                added this week.
+              </p>
+            </article>
+
+            <article class="panel p-wide studio">
+              <span class="caption">Panel 6 — Meme Studio</span>
+              <div class="panel-body">
+                <div>
+                  <h3>Make new memes in the built-in Studio</h3>
+                  <p>
+                    Classic top and bottom text, caption boxes, stickers and shapes. Cut anyone out of a photo
+                    with the lasso, stack layers, and save straight into your library, already searchable.
+                  </p>
+                  <p class="small">
+                    Comes with 64 original stickers and characters, plus packs and Creative Commons search.
+                  </p>
+                </div>
+                <div class="studio-art" aria-hidden="true">
+                  <div class="canvas">
+                    <span class="meme-top">ME: I'LL SLEEP EARLY</span>
+                    <img src="assets/memes/anime-happy.png" alt="" />
+                    <span class="meme-bottom">ALSO ME AT 3 AM</span>
+                  </div>
+                  <div class="tools"><span>✂</span><span>T</span><span>★</span><span>▢</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel p-ink">
+              <span class="caption">Panel 7 — Privacy</span>
+              <h3>Your memes never leave home</h3>
+              <p>
+                No account, no cloud, no analytics. And if you ever want it all gone, the Danger Zone erases every
+                trace in one go.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section how" id="how">
+        <div class="wrap">
+          <header class="section-head">
+            <p class="eyebrow">How it works</p>
+            <h2>Three panels. That's the whole story.</h2>
+          </header>
+          <ol class="strip">
+            <li>
+              <span class="step">1</span>
+              <img src="assets/memes/folk-gloomy.png" alt="" />
+              <h3>Dump them in</h3>
+              <p>Import your meme folder, paste screenshots, drop files or paste links.</p>
+            </li>
+            <li>
+              <span class="step">2</span>
+              <img src="assets/memes/anime-shocked.png" alt="" />
+              <h3>It reads every one</h3>
+              <p>Text recognition runs on your computer and indexes every caption.</p>
+            </li>
+            <li>
+              <span class="step">3</span>
+              <img src="assets/memes/face-cool.png" alt="" />
+              <h3>Find it, send it</h3>
+              <p>Type a few words, then copy it or drag it into the chat.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD -->
+      <section class="section download" id="download">
+        <div class="halftone" aria-hidden="true"></div>
+        <div class="wrap">
+          <header class="section-head">
+            <p class="eyebrow">Download</p>
+            <h2>Get MemeFactory</h2>
+            <p class="release-line" data-release-line>
+              Always the latest release, straight from
+              <a href="https://github.com/gabojkz/meme-factory/releases/latest" rel="noopener">GitHub</a>.
+            </p>
+          </header>
+
+          <div class="downloads" data-downloads>
+            <article class="dl-card c-mac">
+              <header>
+                <h3>macOS</h3>
+                <p>macOS 10.15 Catalina or newer</p>
+              </header>
+              <a class="dl" data-platform="mac-arm" href="https://github.com/gabojkz/meme-factory/releases/latest/download/MemeFactory-macos-arm64.dmg">
+                <span class="arch">Apple Silicon <small>M1 – M4 Macs</small></span>
+                <span class="file">.dmg <span data-size></span></span>
+              </a>
+              <a class="dl" data-platform="mac-intel" href="https://github.com/gabojkz/meme-factory/releases/latest/download/MemeFactory-macos-x64.dmg">
+                <span class="arch">Intel</span>
+                <span class="file">.dmg <span data-size></span></span>
+              </a>
+            </article>
+            <article class="dl-card c-win">
+              <header>
+                <h3>Windows</h3>
+                <p>Windows 10 and 11, 64-bit</p>
+              </header>
+              <a class="dl" data-platform="windows" href="https://github.com/gabojkz/meme-factory/releases/latest/download/MemeFactory-windows-x64.msi">
+                <span class="arch">Installer</span>
+                <span class="file">.msi <span data-size></span></span>
+              </a>
+            </article>
+            <article class="dl-card c-linux">
+              <header>
+                <h3>Linux</h3>
+                <p>x86_64</p>
+              </header>
+              <a class="dl" data-platform="linux" href="https://github.com/gabojkz/meme-factory/releases/latest/download/MemeFactory-linux-x86_64.AppImage">
+                <span class="arch">AppImage <small>most distros</small></span>
+                <span class="file">.AppImage <span data-size></span></span>
+              </a>
+              <a class="dl" data-platform="linux-deb" href="https://github.com/gabojkz/meme-factory/releases/latest/download/MemeFactory-linux-amd64.deb">
+                <span class="arch">Debian &amp; Ubuntu</span>
+                <span class="file">.deb <span data-size></span></span>
+              </a>
+            </article>
+          </div>
+
+          <div class="mac-help">
+            <img src="assets/memes/blob-facepalm.png" alt="" />
+            <div>
+              <h3>Mac says it “can’t be opened”?</h3>
+              <p>
+                The app isn’t notarized by Apple yet. Right-click MemeFactory in Applications → <b>Open</b> →
+                <b>Open</b>. Or run this once in Terminal:
+              </p>
+              <div class="cmd">
+                <code>xattr -cr /Applications/MemeFactory.app</code>
+                <button type="button" class="btn btn-small" data-copy="xattr -cr /Applications/MemeFactory.app">Copy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section faq" id="faq">
+        <div class="wrap narrow">
+          <header class="section-head">
+            <p class="eyebrow">FAQ</p>
+            <h2>Questions, answered</h2>
+          </header>
+          <details>
+            <summary>Is it really free?</summary>
+            <p>Yes. MemeFactory is open source under the MIT licence. No trials, no ads, no “pro” tier.</p>
+          </details>
+          <details>
+            <summary>Does it upload my memes anywhere?</summary>
+            <p>
+              No. Your library, the text it reads and your tags stay on your computer. The app only goes online
+              when you paste a link or browse the optional online sticker catalog.
+            </p>
+          </details>
+          <details>
+            <summary>Which Mac download do I need?</summary>
+            <p>
+              Apple menu → About This Mac. If the chip says <b>Apple M…</b>, get Apple Silicon. If it says
+              <b>Intel</b>, get Intel.
+            </p>
+          </details>
+          <details>
+            <summary>Can it read memes in other languages?</summary>
+            <p>Text recognition works best with English captions today. Titles and tags work in any language.</p>
+          </details>
+          <details>
+            <summary>Why can’t some Instagram videos be saved?</summary>
+            <p>
+              Instagram shows some videos only to logged-in users. MemeFactory never asks for your accounts,
+              so for those, download the video another way and drop the file in.
+            </p>
+          </details>
+          <details>
+            <summary>I found a bug or have an idea</summary>
+            <p>
+              Open an issue on
+              <a href="https://github.com/gabojkz/meme-factory/issues" rel="noopener">GitHub</a>. Feature
+              ideas are very welcome.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="final">
+        <div class="wrap final-inner">
+          <img src="assets/memes/sticker-burst-wow.png" alt="" class="final-sticker" />
+          <h2>Your memes deserve better than <code>Downloads/</code></h2>
+          <a class="btn btn-primary" href="#download">Get MemeFactory, free</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer-inner">
+        <a class="logo" href="#top">
+          <img src="assets/icon.png" alt="" width="32" height="32" />
+          <span>MemeFactory</span>
+        </a>
+        <p>
+          Free and open source (MIT) ·
+          <a href="https://github.com/gabojkz/meme-factory" rel="noopener">Source code</a> ·
+          <a href="https://github.com/gabojkz/meme-factory/releases" rel="noopener">All releases</a> ·
+          <a href="https://github.com/gabojkz/meme-factory/issues" rel="noopener">Report a bug</a>
+        </p>
+        <p class="small">Made with too much coffee and far too many memes.</p>
+      </div>
+    </footer>
+  </body>
+</html>
