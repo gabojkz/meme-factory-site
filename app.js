@@ -99,8 +99,8 @@ function setupDownloads(release, platform) {
       // This build isn't in the newest release: send people to the release page instead of a 404.
       card.href = release.url;
       card.classList.add("missing");
-      $(".file", card).textContent = "Coming in the next release";
-      card.title = "This build isn’t in the newest release — see the release page";
+      $(".file", card).textContent = "Still cooking: next release";
+      card.title = "This build isn’t in the newest release yet. The release page has what’s there.";
     }
   }
 
@@ -119,7 +119,7 @@ function setupDownloads(release, platform) {
   const p = PLATFORMS[platform];
   if (platform === "mobile") {
     $("[data-primary-label]").textContent = "Get it on your computer";
-    $("[data-primary-meta]").textContent = "Free desktop app for Windows, macOS and Linux";
+    $("[data-primary-meta]").textContent = "It’s a desktop app, bestie. Open this on a computer";
     return;
   }
   if (!p) return;
@@ -133,7 +133,7 @@ function setupDownloads(release, platform) {
     .join(" · ");
   if (platform === "mac-arm" || platform === "mac-intel") {
     const other = platform === "mac-arm" ? "mac-intel" : "mac-arm";
-    note.innerHTML = `Not sure which Mac you have? <a href="#download">Intel and Apple Silicon builds are below</a>.`;
+    note.innerHTML = `Intel Mac? Your build is <a href="#download">down here</a>.`;
     note.hidden = false;
     $(`[data-platform="${other}"]`)?.setAttribute("title", "The other Mac build");
   }
@@ -196,7 +196,7 @@ function copyButtons() {
     btn.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(btn.dataset.copy);
-        btn.textContent = "Copied!";
+        btn.textContent = "Copied 😎";
       } catch {
         btn.textContent = "Select & copy";
       }

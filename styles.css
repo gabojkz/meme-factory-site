@@ -704,6 +704,13 @@ code {
   padding-right: 64px;
 }
 
+.nobody {
+  border-left: 4px solid var(--ink);
+  padding-left: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 .search-demo {
   display: flex;
   flex-wrap: wrap;
