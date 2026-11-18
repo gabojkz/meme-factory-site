@@ -876,6 +876,128 @@ mark {
   margin: 0;
 }
 
+/* Salt Bae, sprinkling features over the features heading */
+
+#features .section-head {
+  position: relative;
+  max-width: none;
+  padding-right: 340px;
+}
+
+.salt {
+  position: absolute;
+  right: 10px;
+  top: -70px;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+}
+
+.salt img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 220px;
+  height: auto;
+  filter: drop-shadow(4px 4px 0 var(--ink));
+}
+
+.salt-label {
+  position: absolute;
+  left: -70px;
+  top: 6px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  padding: 2px 10px;
+  font: 700 0.9rem var(--font-display);
+  box-shadow: 2px 2px 0 var(--ink);
+  rotate: -4deg;
+  white-space: nowrap;
+}
+
+/* The "salt": feature names falling from his hand */
+.grain {
+  position: absolute;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 0 8px;
+  font: 700 0.78rem var(--font-display);
+  white-space: nowrap;
+  animation: sprinkle 2.8s ease-in infinite;
+  opacity: 0;
+}
+
+.g1 { left: 60px; top: 70px; background: var(--panel); }
+.g2 { left: 30px; top: 70px; background: var(--cyan); animation-delay: 0.7s; }
+.g3 { left: 84px; top: 70px; background: #ffd2cc; animation-delay: 1.4s; }
+.g4 { left: 48px; top: 70px; background: #c9f2d4; animation-delay: 2.1s; }
+
+@keyframes sprinkle {
+  0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+  12% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-28px, 150px) rotate(-24deg); }
+}
+
+/* Grumpy Cat, answering the FAQ */
+
+.faq .section-head {
+  position: relative;
+  padding-right: 230px;
+  max-width: none;
+}
+
+.grumpy {
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 250px;
+  pointer-events: none;
+}
+
+.grumpy img {
+  width: 170px;
+  height: auto;
+  margin-left: auto;
+  filter: drop-shadow(4px 4px 0 var(--ink));
+  rotate: 4deg;
+}
+
+.grumpy-bubble {
+  position: absolute;
+  left: -40px;
+  top: -6px;
+  z-index: 1;
+  border: var(--line) solid var(--ink);
+  border-radius: 18px;
+  background: var(--white);
+  padding: 6px 14px 8px;
+  font: 700 1.6rem/1 var(--font-display);
+  text-align: center;
+  box-shadow: 3px 3px 0 var(--ink);
+  rotate: -5deg;
+}
+
+.grumpy-bubble small {
+  display: block;
+  font: 700 0.72rem var(--font-body);
+  margin-bottom: 2px;
+  opacity: 0.75;
+}
+
+.grumpy-bubble::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: -13px;
+  width: 18px;
+  height: 18px;
+  background: var(--white);
+  border-right: var(--line) solid var(--ink);
+  border-bottom: var(--line) solid var(--ink);
+  transform: skewX(-20deg) rotate(30deg);
+}
+
 /* Under the hood — dark panel for the OCR machine illustration */
 
 .machine {
@@ -1352,6 +1474,21 @@ mark {
 }
 
 @media (max-width: 860px) {
+  #features .section-head,
+  .faq .section-head {
+    padding-right: 0;
+    padding-top: 230px;
+  }
+
+  .salt,
+  .grumpy {
+    left: 50%;
+    right: auto;
+    top: -20px;
+    transform: translateX(-50%) scale(0.8);
+    transform-origin: top center;
+  }
+
   .machine-facts {
     grid-template-columns: 1fr;
   }
