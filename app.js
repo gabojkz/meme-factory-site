@@ -6,16 +6,26 @@
 const REPO = "gabojkz/meme-factory";
 const RELEASES = `https://github.com/${REPO}/releases`;
 const LATEST_API = `https://api.github.com/repos/${REPO}/releases/latest`;
-const CACHE_KEY = "mf-latest-release";
+const CACHE_KEY = "mf-latest-release-v2";
 const CACHE_MS = 10 * 60 * 1000; // GitHub allows 60 API calls/hour per visitor
 
+// `file` is the fixed download name the release workflow uploads; `match` finds the
+// versioned build (e.g. MemeFactory_0.6.1_aarch64.dmg) when a release lacks it.
 const PLATFORMS = {
-  "mac-arm": { file: "MemeFactory-macos-arm64.dmg", name: "macOS", detail: "Apple Silicon", icon: "" },
-  "mac-intel": { file: "MemeFactory-macos-x64.dmg", name: "macOS", detail: "Intel", icon: "" },
-  windows: { file: "MemeFactory-windows-x64.msi", name: "Windows", detail: "64-bit", icon: "⊞" },
-  linux: { file: "MemeFactory-linux-x86_64.AppImage", name: "Linux", detail: "AppImage", icon: "🐧" },
-  "linux-deb": { file: "MemeFactory-linux-amd64.deb", name: "Linux", detail: ".deb", icon: "🐧" },
+  "mac-arm": { file: "MemeFactory-macos-arm64.dmg", match: /_aarch64\.dmg$/i, name: "macOS", detail: "Apple Silicon", icon: "" },
+  "mac-intel": { file: "MemeFactory-macos-x64.dmg", match: /_x64\.dmg$/i, name: "macOS", detail: "Intel", icon: "" },
+  windows: { file: "MemeFactory-windows-x64.msi", match: /_x64.*\.msi$/i, name: "Windows", detail: "64-bit", icon: "⊞" },
+  linux: { file: "MemeFactory-linux-x86_64.AppImage", match: /_amd64\.AppImage$/i, name: "Linux", detail: "AppImage", icon: "🐧" },
+  "linux-deb": { file: "MemeFactory-linux-amd64.deb", match: /_amd64\.deb$/i, name: "Linux", detail: ".deb", icon: "🐧" },
 };
+
+/** The release's file for a platform: the fixed name, else the versioned build. */
+function assetFor(release, p) {
+  if (!release) return undefined;
+  if (release.assets[p.file]) return release.assets[p.file];
+  const name = Object.keys(release.assets).find((n) => p.match.test(n));
+  return name ? release.assets[name] : undefined;
+}
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -85,7 +95,7 @@ async function detectPlatform() {
 function setupDownloads(release, platform) {
   for (const card of $$("[data-platform]")) {
     const p = PLATFORMS[card.dataset.platform];
-    const asset = release?.assets[p.file];
+    const asset = assetFor(release, p);
     const size = $("[data-size]", card);
     const yours = card.dataset.platform === platform;
     card.classList.toggle("yours", yours);
@@ -123,7 +133,7 @@ function setupDownloads(release, platform) {
     return;
   }
   if (!p) return;
-  const asset = release?.assets[p.file];
+  const asset = assetFor(release, p);
   if (release && !asset) return; // nothing for this platform yet: keep "see all downloads"
   btn.href = asset?.url || `${RELEASES}/latest/download/${p.file}`;
   $("[data-primary-label]").textContent = `Download for ${p.name}`;
